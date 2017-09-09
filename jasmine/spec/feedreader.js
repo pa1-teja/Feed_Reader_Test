@@ -84,7 +84,7 @@ $(function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
 
           });
-      
+
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
@@ -129,9 +129,11 @@ $(function() {
             it(' feed change is happening after loading all the feeds',
                 function(){
                     expect(fstFeed).not.toEqual(secndFeed);
-                })
+                });
 
          });
 
 
-}());
+   }());
+
+});
