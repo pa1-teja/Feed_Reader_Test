@@ -98,7 +98,7 @@ describe('Status on Initial Entries', function() {
         loadFeed(0, done);
     });
 
-    it(' one or more entries are loaded', function(done) {
+    it(' one or more entries are loaded', function() {
         expect($(".feed .entry").length).toBeGreaterThan(0);
     });
 });
@@ -114,7 +114,7 @@ describe('New Feed Selection', function() {
     var fstFeed, secndFeed;
 
     it(' feed change is happening after loading all the feeds',
-        function() {
+        function(done) {
 
             loadFeed(0, function() {
                 fstFeed = $('.feed').html();
