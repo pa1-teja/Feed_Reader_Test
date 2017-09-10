@@ -66,7 +66,7 @@ $(function() {
 
             it(' is hidden',function(){
 
-               expect($(body).hasClass('menu-hidden')).toBe(true);
+               expect($('body').hasClass('menu-hidden')).toBe(true);
             });
          
 
@@ -84,6 +84,7 @@ $(function() {
             expect($('body').hasClass('menu-hidden')).toBe(true);
 
           });
+      });
 
 
     /* TODO: Write a new test suite named "Initial Entries" */
@@ -115,25 +116,21 @@ $(function() {
          describe('New Feed Selection', function(){
             var fstFeed, secndFeed;
 
-            beforeEach(function(done){
-                loadFeed(0, function(){
-                    fstFeed = $(".feed").html();
-
-                    loadFeed(1, function () {
-                    feeddata2 = $('.feed').html();
-                    done();
-                    });
-                });
-            });
-
             it(' feed change is happening after loading all the feeds',
                 function(){
+
+            loadFeed(0, function() {
+                fstFeed = $('.feed').html();
+                loadFeed(1, function() {
+                    secndFeed = $('.feed').html();
                     expect(fstFeed).not.toEqual(secndFeed);
+                    done();
+                });
+                    
                 });
 
          });
+        });
 
 
    }());
-
-});
